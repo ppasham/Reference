@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.header.component.scss']
 })
 export class AppHeaderComponent implements OnInit {
-
-  constructor() { }
+  protected appName: string;
+  constructor() {
+    this.appName = 'Viplogics';
+  }
 
   ngOnInit() {
   }

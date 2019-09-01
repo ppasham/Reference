@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "../ngv8/node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../ngv8/node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
