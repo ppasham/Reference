@@ -5,9 +5,11 @@
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
+    "build_clean": "ng build --prod && del \"../../server/front-end/*.*\" /s /q & xcopy /s dist \"../../server/front-end\"",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "cd src/assets && get-google-fonts -i \"https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600\""
   },
   "private": true,
   "dependencies": {
@@ -22,8 +24,10 @@
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
+    "normalize.css": "^8.0.1",
     "popper.js": "^1.15.0",
     "rxjs": "~6.4.0",
+    "skeleton-css": "^2.0.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
@@ -33,6 +37,7 @@
     "@angular/compiler-cli": "~8.2.4",
     "@angular/language-service": "~8.2.4",
     "@types/node": "~8.9.4",
+    "get-google-fonts": "^1.2.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^5.0.0",
