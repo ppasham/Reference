@@ -1,1 +1,106 @@
-/* You can add global styles to this file, and also import other style files */
+// User reset
+* {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+// structure
+.container {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.inner-w {
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    background: rgba(0, 0, 0, .02);
+    padding: 1rem;
+}
+
+// type
+body {
+    font-family: arial;
+    background-image: url('assets/images/bg.jpg');
+}
+
+h2:after,
+h3:after {
+    content: " (relative)";
+}
+
+.main-content {
+    h1 {
+        font-size: 2em;
+        font-weight: bold;
+        margin-bottom: .2em;
+    }
+    p,
+    li {
+        font-size: .9em;
+        line-height: 1.4
+    }
+    ul {
+        list-style: square;
+        padding: 1em;
+    }
+    ul li {
+        margin-bottom: .5em;
+    }
+} // .main-content
+// style
+// variables
+$global-header-height: 8em;
+$global-footer-height: 6em;
+.global-header {
+    // background-color: lightgray;
+    min-height: 50px;
+    border-bottom: 1px solid gray;
+    img {
+        height: 50px;
+        width: 50px;
+    }
+}
+
+.main-content {
+    background-color: #efefef;
+}
+
+.global-footer {
+    background-color: transparent;
+    min-height: 50px;
+    border-top: 1px solid gray;
+}
+
+// @media (min-width: 600px) and (min-height: 700px) {
+//     .global-header {
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         height: $global-header-height;
+//         z-index: 1;
+//         img {
+//             height: 50px;
+//             width: 50px;
+//         }
+//     }
+//     .main-content {
+//         margin-top: $global-header-height;
+//         margin-bottom: $global-footer-height;
+//     }
+//     .global-footer {
+//         position: fixed;
+//         bottom: 0;
+//         left: 0;
+//         height: $global-footer-height;
+//         z-index: 1;
+//         font-size: 12px;
+//     }
+//     h2:after,
+//     h3:after {
+//         content: " (fixed)";
+//         color: #ff0066;
+//     }
+// }
