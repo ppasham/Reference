@@ -1,0 +1,2 @@
+This action runs Flyway v9 to migrate database. It aims to migrate database for testing in workflows.
+https://github.com/joshuaavalon/flyway-action
