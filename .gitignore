@@ -178,6 +178,9 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+# Spyder IDE
+.spyproject/
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -493,3 +496,5 @@ MigrationBackup/
 
 # End of https://www.gitignore.io/api/macos,windows,jetbrains,visualstudio,visualstudiocode
 /DDC/Identity/DDCAnywhere-Release1-ADFS/wwwroot/lib
+Learn/.$AWS.drawio.html.bkp
+Designs/.$Untitled Diagram.drawio.bkp
