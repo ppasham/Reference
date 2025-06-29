@@ -1,6 +1,13 @@
 '''
+Please install the required packages before running the app.
+    You can install them using pip: 
+        pip install streamlit pandas matplotlib pandasql
+    You can install them using conda:
+        conda install streamlit pandas matplotlib pandasql
+
+To run the app, save this code in a file named `app.py` and ensure you have the `app_code.py` module in the same directory.
     You can run this command in your terminal to start the Streamlit app.
-        C:Usersthoma> python -m streamlit run app.py
+        > python -m streamlit run app.py
 
     You can now view your Streamlit app in your browser.
     Local URL: http://localhost:8501
@@ -10,7 +17,6 @@
 
 import streamlit as st
 from app_code import appFacade
-import datetime as dt
 
 DEBUG = False
 # Streamlit App

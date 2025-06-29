@@ -7,7 +7,6 @@ Created on Tue Jun 24 16:29:15 2025
 
 # generate the 1m record CSV file
 #
-import polars as pl
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
@@ -82,6 +81,3 @@ def generate_data(nrows: int, filename: str) -> pd.DataFrame:
     # Ensure comma is used as the delimiter
     #df.to_csv(filename, sep=',', index=False)
     return df
-
-# Generate 100,000 rows of data with random order_date and save to CSV
-# generate(100, "C:\\temp\\sales_data1.csv")
