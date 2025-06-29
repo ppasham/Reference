@@ -80,7 +80,7 @@ def generate_data(nrows: int, filename: str) -> pd.DataFrame:
     # Create Polars DataFrame and write to CSV with explicit delimiter
     df = pd.DataFrame(columns)
     # Ensure comma is used as the delimiter
-    df.to_csv(filename, sep=',', index=False)
+    #df.to_csv(filename, sep=',', index=False)
     return df
 
 # Generate 100,000 rows of data with random order_date and save to CSV
