@@ -25,8 +25,8 @@ _data  = pd.DataFrame()
 DEBUG = True
 class appFacade:
     
-    def __init__(self):
-        self.load_data(100, filename="C:\\temp\\sales_data.csv")
+    def __init__(self, sales_records: int, filename: str):
+        self.load_data(sales_records, filename)
     
     def __enter__(self):
         print(f"Entering context for app Facade")
@@ -40,7 +40,7 @@ class appFacade:
             # return True
 
     def load_data(self, nrows: int, filename: str):
-        self._data = ds.generate_data(nrows =100, filename="C:\\temp\\sales_data.csv")        
+        self._data = ds.generate_data(nrows, filename)        
 
     def get_data(self, start_date, end_date, category) -> pd.DataFrame | None:
         # Query the data to get sales data within the specified date range and category

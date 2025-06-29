@@ -12,13 +12,16 @@ import streamlit as st
 from app_code import appFacade
 import datetime as dt
 
-DEBUG = True
+DEBUG = False
 # Streamlit App
 st.title("Sales Performance Dashboard")
-facade = appFacade()
+st.markdown("""
+    This dashboard provides insights into sales performance, including revenue trends, category performance, and top products.
+    Use the filters below to customize your view.
+""")
 
 # Filters
-with st.container(), appFacade() as facade:
+with st.container(), appFacade(sales_records=100_000, filename="C:\\temp\\sales_data.csv") as facade:
     col1, col2, col3 = st.columns([1, 1, 2])
     date_range = facade.get_date_range()
     if date_range is not None and not date_range.empty:        
