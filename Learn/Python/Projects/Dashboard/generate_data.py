@@ -8,11 +8,12 @@ Created on Tue Jun 24 16:29:15 2025
 # generate the 1m record CSV file
 #
 import polars as pl
+import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 
 
-def generate(nrows: int, filename: str):
+def generate_data(nrows: int, filename: str) -> pd.DataFrame:
     names = np.asarray(
         [
             "Laptop",
@@ -61,11 +62,13 @@ def generate(nrows: int, filename: str):
         0, date_range))).strftime('%Y-%m-%d') for _ in range(nrows)])
 
     # Define columns
-    columns = {
+    from typing import Any
+    columns: dict[str, np.ndarray | list[Any] | np.generic] = {
         "order_id": np.arange(nrows),
         "order_date": order_dates,
         "customer_id": np.random.randint(100, 1000, size=nrows),
-        "customer_name": [f"Customer_{i}" for i in np.random.randint(2**15, size=nrows)],
+        "customer_name": [f"Customer_{i}"
+                          for i in np.random.randint(2**15, size=nrows)],
         "product_id": product_id + 200,
         "product_names": names[product_id],
         "categories": categories[product_id],
@@ -75,10 +78,10 @@ def generate(nrows: int, filename: str):
     }
 
     # Create Polars DataFrame and write to CSV with explicit delimiter
-    df = pl.DataFrame(columns)
+    df = pd.DataFrame(columns)
     # Ensure comma is used as the delimiter
-    df.write_csv(filename, separator=',', include_header=True)
-
+    df.to_csv(filename, sep=',', index=False)
+    return df
 
 # Generate 100,000 rows of data with random order_date and save to CSV
-generate(100, "C:\\temp\\sales_data.csv")
+# generate(100, "C:\\temp\\sales_data1.csv")
