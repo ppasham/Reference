@@ -14,7 +14,7 @@ import streamlit as st
 # import datetime
 import psycopg2
 # from psycopg2 import sql
-# from psycopg2 import pool
+from psycopg2 import pool
 
 # Initialize connection pool
 try:

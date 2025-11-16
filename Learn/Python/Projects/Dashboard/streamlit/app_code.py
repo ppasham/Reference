@@ -11,16 +11,14 @@ Display data
 """
 import logging
 import generate_data as ds
-import polars as pl;
 from pandasql import sqldf
 import pandas as pd
 import matplotlib.pyplot as plt
-import numpy as np
 
 logging.basicConfig(level=logging.DEBUG,
-                        format='%(asctime)s - %(levelname)s - %(message)s',
-                        handlers=[logging.StreamHandler(),  # Output to console
-                                  logging.FileHandler('app.log')]) # Output to a file
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    handlers=[logging.StreamHandler(),  # Output to console
+                              logging.FileHandler('../app.log')]) # Output to a file
 _data  = pd.DataFrame()
 DEBUG = True
 class appFacade:
